@@ -1,0 +1,15 @@
+steps:
+  # Build the container using BuildKit cache optimizations to reduce compilation overhead
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'build',
+      '--build-arg', 'HF_TOKEN=${_HF_TOKEN}',
+      '--cache-from', 'us-central1-docker.pkg.dev/${PROJECT_ID}/ml-repo/vllm-inference:latest',
+      '-t', 'us-central1-docker.pkg.dev/${PROJECT_ID}/ml-repo/vllm-inference:latest',
+      '.'
+    ]
+images:
+  - 'us-central1-docker.pkg.dev/${PROJECT_ID}/ml-repo/vllm-inference:latest'
+options:
+  substitutionOption: 'ALLOW_LOOSE'
+  supportedSourceHelpers: ['GCS', 'GITHUB']
