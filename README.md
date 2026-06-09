@@ -1,5 +1,7 @@
 # Scalability Analysis and FP8 Optimization of Large Language Models on GCP
 
+*This repository contains the final term project developed for the **Cloud and Machine Learning** graduate course at **New York University (NYU)**.*
+
 This repository contains the benchmarking suite, containerization architecture, and infrastructure configurations used to investigate the performance envelopes and hardware-level bottlenecks associated with deploying Large Language Models (LLMs) in serverless, GPU-accelerated environments. 
 
 Using the Gemma-7B model deployed on NVIDIA L4 hardware within Google Cloud Platform (GCP), this study systematically analyzes the transition from compute-bound to memory-bound execution states under varying concurrency loads. It evaluates the efficacy of FP8 quantization as an architectural intervention to mitigate VRAM saturation and defer horizontal or vertical hardware scaling.
